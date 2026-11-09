@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000;
+
 module.exports = {
     // Development
     dev_build: false, // Whether this version is unstable and should be clearly marked as such.
@@ -40,10 +42,9 @@ module.exports = {
     servers: [
         {
             share_client_server: true,
-            // REPLACE "localhost:3000" OR "localhost:3001" WITH:
-            host: process.env.PORT ? "sploinkedv2.onrender.com" : `localhost:${PORT}`,
-            port: PORT,
-            id: "la",
+        host: process.env.PORT ? "sploinkedv2.onrender.com" : `localhost:${PORT}`,
+        port: PORT,
+        id: "la",
 
             region: "Local",
             serverhost: "Local",
