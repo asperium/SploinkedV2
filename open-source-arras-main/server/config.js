@@ -39,9 +39,10 @@ module.exports = {
 
     servers: [
         {
-            share_client_server: false,
-            host: "localhost:3001",
-            port: 3001,
+            share_client_server: true,
+            // REPLACE "localhost:3000" OR "localhost:3001" WITH:
+            host: process.env.PORT ? "sploinkedv2.onrender.com" : `localhost:${PORT}`,
+            port: PORT,
             id: "la",
 
             region: "Local",

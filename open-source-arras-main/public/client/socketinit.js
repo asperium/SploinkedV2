@@ -815,6 +815,11 @@ const protocols = {
     "http:": "ws://",
     "https:": "wss://"
 };
+
+// Use it to construct your WebSocket connection URL dynamically:
+const wsUrl = protocols[window.location.protocol] + window.location.host;
+const ws = new WebSocket(wsUrl);
+
 let incoming = async function(message, socket) {
     await new Promise(Resolve => setTimeout(Resolve, window.fakeLagMS));
     // Make sure it looks legit.
